@@ -489,7 +489,6 @@ body.theme-tzz .media-thumb {
 body.theme-tzz .media-thumb img {
   width: 100%;
   height: auto;
-  max-height: 144px;
   object-fit: contain;
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(61, 57, 41, 0.08);
