@@ -568,6 +568,26 @@ body.theme-tzz .media-links a:hover {
   background: var(--luka-accent);
   color: #fff;
 }
+body.theme-tzz .github-stars {
+  display: none;
+  margin-left: 6px;
+  padding-left: 7px;
+  border-left: 1px solid color-mix(in srgb, var(--luka-border) 68%, transparent);
+  color: var(--luka-secondary);
+  font-size: 12px;
+  line-height: 1;
+}
+
+body.theme-tzz .github-stars.is-visible {
+  display: inline-flex;
+  align-items: center;
+}
+
+body.theme-tzz .media-links a:hover .github-stars {
+  border-left-color: rgba(255, 255, 255, 0.42);
+  color: #fff;
+}
+
 
 body.theme-tzz .awards-grid {
   display: flex;

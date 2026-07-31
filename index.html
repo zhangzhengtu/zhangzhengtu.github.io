@@ -178,7 +178,7 @@
               <div class="media-links">
                 <a href="https://arxiv.org/abs/2606.20092" target="_blank" rel="noopener">Paper</a>
                 <a href="https://ganlin-yang.github.io/EventVLA.github.io/" target="_blank" rel="noopener">Project</a>
-                <a href="https://github.com/InternRobotics/EventVLA" target="_blank" rel="noopener">Code</a>
+                <a href="https://github.com/InternRobotics/EventVLA" target="_blank" rel="noopener" data-github-repo="InternRobotics/EventVLA">Code <span class="github-stars" aria-label="GitHub stars"></span></a>
               </div>
             </div>
           </article>
@@ -223,7 +223,7 @@
               <div class="media-title">Panthera-HT:An open-source six-axis robotic arm platform for robot learning development.</div>
               <p class="media-summary">Contributed to LeRobot framework integration and related robotics system adaptation for embodied intelligence workflows.</p>
               <div class="media-links">
-                <a href="https://github.com/HighTorque-Robotics/Panthera-HT_Main" target="_blank" rel="noopener">Code</a>
+                <a href="https://github.com/HighTorque-Robotics/Panthera-HT_Main" target="_blank" rel="noopener" data-github-repo="HighTorque-Robotics/Panthera-HT_Main">Code <span class="github-stars" aria-label="GitHub stars"></span></a>
               </div>
             </div>
           </article>
@@ -325,6 +325,49 @@
       const sections = Array.from(document.querySelectorAll('.section'));
       const navLinks = Array.from(document.querySelectorAll('.nav-right a[href^="#"]'));
 
+
+      function formatStars(count) {
+        if (count >= 1000) {
+          const compact = (count / 1000).toFixed(count >= 10000 ? 0 : 1).replace(/\.0$/, '');
+          return compact + 'k';
+        }
+
+        return String(count);
+      }
+
+      function loadGitHubStars() {
+        const repoLinks = Array.from(document.querySelectorAll('[data-github-repo]'));
+
+        repoLinks.forEach(function(link) {
+          const repo = link.getAttribute('data-github-repo');
+          const stars = link.querySelector('.github-stars');
+
+          if (!repo || !stars || !window.fetch) {
+            return;
+          }
+
+          fetch('https://api.github.com/repos/' + repo)
+            .then(function(response) {
+              if (!response.ok) {
+                throw new Error('GitHub stars unavailable');
+              }
+
+              return response.json();
+            })
+            .then(function(data) {
+              if (typeof data.stargazers_count !== 'number') {
+                return;
+              }
+
+              stars.textContent = '★ ' + formatStars(data.stargazers_count);
+              stars.classList.add('is-visible');
+            })
+            .catch(function() {
+              stars.textContent = '';
+              stars.classList.remove('is-visible');
+            });
+        });
+      }
       function updateActiveNav() {
         const offset = window.scrollY + 120;
         let currentId = sections[0] ? sections[0].id : '';
@@ -360,6 +403,7 @@
       }
 
       updateActiveNav();
+      loadGitHubStars();
       window.addEventListener('scroll', updateActiveNav, { passive: true });
       window.addEventListener('resize', updateActiveNav);
     })();
