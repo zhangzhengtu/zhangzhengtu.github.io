@@ -1,0 +1,276 @@
+﻿body.writing-page {
+  min-height: 100vh;
+  background: var(--luka-bg);
+  color: var(--luka-text);
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Source Han Serif CN", "Songti SC", SimSun, serif;
+  line-height: 1.75;
+}
+
+body.writing-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body.writing-page .writing-nav {
+  border-bottom: 1px solid var(--luka-footer-border);
+}
+
+body.writing-page .writing-nav-inner {
+  width: min(100% - 40px, 880px);
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+body.writing-page .writing-brand {
+  color: var(--luka-accent);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+body.writing-page .writing-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+body.writing-page .writing-nav-links a {
+  color: var(--luka-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+body.writing-page .writing-nav-links a:hover {
+  color: var(--luka-accent);
+}
+
+body.writing-page .writing-main {
+  width: min(100% - 40px, 880px);
+  margin: 0 auto;
+  padding: 84px 0 96px;
+}
+
+body.writing-page .writing-header {
+  margin-bottom: 52px;
+}
+
+body.writing-page .writing-title {
+  margin: 0 0 12px;
+  color: var(--luka-text);
+  font-size: clamp(34px, 6vw, 58px);
+  line-height: 1.1;
+  font-weight: 650;
+}
+
+body.writing-page .writing-subtitle {
+  max-width: 560px;
+  margin: 0;
+  color: var(--luka-secondary);
+  font-size: 17px;
+}
+
+body.writing-page .writing-list {
+  display: grid;
+  gap: 0;
+}
+
+body.writing-page .writing-card {
+  display: grid;
+  grid-template-columns: minmax(88px, 112px) 1fr;
+  gap: 26px;
+  padding: 26px 0 28px;
+  border-bottom: 1px solid var(--luka-footer-border);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+body.writing-page .writing-card:first-child {
+  border-top: 1px solid var(--luka-footer-border);
+}
+
+body.writing-page .writing-card:hover {
+  transform: translateX(4px);
+}
+
+body.writing-page .writing-card-date {
+  padding-top: 3px;
+  color: var(--luka-accent);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+body.writing-page .writing-card h2 {
+  margin: 0 0 8px;
+  color: var(--luka-text);
+  font-size: 22px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+body.writing-page .writing-card p {
+  margin: 0;
+  color: var(--luka-secondary);
+  font-size: 15px;
+}
+
+body.writing-page .article-shell {
+  max-width: 740px;
+}
+
+body.writing-page .article-kicker {
+  margin: 0 0 10px;
+  color: var(--luka-accent);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+body.writing-page .article-title {
+  margin: 0 0 12px;
+  color: var(--luka-text);
+  font-size: clamp(32px, 6vw, 52px);
+  line-height: 1.15;
+  font-weight: 650;
+}
+
+body.writing-page .article-date {
+  margin: 0 0 42px;
+  color: var(--luka-secondary);
+  font-size: 14px;
+}
+
+body.writing-page .article-body {
+  color: var(--luka-text);
+  font-size: 18px;
+  line-height: 1.92;
+}
+
+body.writing-page .article-body p {
+  margin: 0 0 1.3em;
+}
+
+body.writing-page .article-body h2 {
+  margin: 2.25em 0 0.8em;
+  color: var(--luka-text);
+  font-size: 25px;
+  line-height: 1.35;
+  font-weight: 650;
+}
+
+body.writing-page .article-body h3 {
+  margin: 1.9em 0 0.7em;
+  color: var(--luka-text);
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 650;
+}
+
+body.writing-page .article-body strong {
+  color: var(--luka-text);
+  font-weight: 700;
+}
+
+body.writing-page .article-body em {
+  color: var(--luka-text);
+}
+
+body.writing-page .article-body a {
+  color: var(--luka-accent);
+  border-bottom: 1px solid color-mix(in srgb, var(--luka-accent) 38%, transparent);
+}
+
+body.writing-page .article-body blockquote {
+  margin: 1.6em 0;
+  padding: 2px 0 2px 20px;
+  border-left: 3px solid var(--luka-accent);
+  color: var(--luka-text);
+}
+
+body.writing-page .article-body code {
+  padding: 2px 5px;
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--luka-accent) 10%, transparent);
+  color: var(--luka-text);
+  font-size: 0.9em;
+}
+
+body.writing-page .article-body ul,
+body.writing-page .article-body ol {
+  margin: 0 0 1.3em;
+  padding-left: 1.35em;
+}
+
+body.writing-page .article-body li {
+  margin: 0.32em 0;
+}
+
+body.writing-page .article-placeholder {
+  color: var(--luka-text);
+}
+
+body.writing-page .back-link {
+  display: inline-flex;
+  margin-top: 56px;
+  color: var(--luka-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+body.writing-page .back-link:hover {
+  color: var(--luka-accent);
+}
+
+body.writing-page .theme-toggle {
+  border: none;
+  background: transparent;
+  color: var(--luka-text);
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+body.writing-page .theme-toggle:hover {
+  background: var(--luka-border);
+  color: var(--luka-accent);
+}
+
+@media (max-width: 640px) {
+  body.writing-page .writing-nav-inner {
+    width: min(100% - 32px, 880px);
+  }
+
+  body.writing-page .writing-main {
+    width: min(100% - 32px, 880px);
+    padding: 56px 0 72px;
+  }
+
+  body.writing-page .writing-header {
+    margin-bottom: 38px;
+  }
+
+  body.writing-page .writing-card {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 24px 0 26px;
+  }
+
+  body.writing-page .writing-card-date {
+    padding-top: 0;
+  }
+
+  body.writing-page .writing-card h2 {
+    font-size: 20px;
+  }
+
+  body.writing-page .article-body {
+    font-size: 16px;
+    line-height: 1.88;
+  }
+}
+
